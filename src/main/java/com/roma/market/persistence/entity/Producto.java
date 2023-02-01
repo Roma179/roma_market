@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_producto")
     private Integer idProducto;
 
@@ -22,7 +23,7 @@ public class Producto {
     @Column(name="precio_venta")
     private Integer precioVenta;
 
-    @Column(name = "cantida_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
@@ -85,5 +86,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
